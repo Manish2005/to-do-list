@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+.card-header {
+    font-weight: bold;
+}
+
+.card-header.bg-primary {
+    color: #fff;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.btn {
+    cursor: pointer !important;
+}
+
+.center {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}

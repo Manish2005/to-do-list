@@ -1,0 +1,46 @@
+<br>
+<div class="todo-form">
+  <div class="input-group">
+    <span class="input-group-addon" style="background:transparent;">
+      <i class="fa fa-plus"></i>
+    </span>
+    <input type="text" style="border-left:0;" (keyup)="onKeyPress($event)" [(ngModel)]="newTask" class="form-control" placeholder="Add New To Do">
+  </div>
+</div>
+<br>
+<div class="card">
+  <div class="card-header bg-primary"> To Do List</div>
+  <div class="card-body no-padding">
+    <table class="table table-bordered table-striped no-margin">
+      <thead>
+        <th style="width:90px;"></th>
+        <th>What?</th>
+        <th style="width:60px;">Actions</th>
+      </thead>
+      <tbody>
+        <tr *ngIf="!tasks.length">
+          <td colspan="3">
+            <div class="center bold">No Tasks Added</div>
+          </td>
+        </tr>
+        <tr *ngFor="let item of sortedTasks();let i=index">
+          <td>
+            <label class="custom-control custom-checkbox no-margin" [ngClass]="{'active-item': item.status === 'Active'}">
+              <input type="checkbox" class="custom-control-input" [disabled]="item.status === 'Completed'" (change)="markDone(item)">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description" [ngClass]="{'text-success': item.status === 'Active'}">
+                {{item.status}}
+              </span>
+            </label>
+          </td>
+          <td> {{item.task}}</td>
+          <td class="center">
+            <button class="btn btn-sm btn-link" title="Remove Item" (click)="removeItem(i)">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

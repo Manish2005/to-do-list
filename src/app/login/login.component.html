@@ -1,0 +1,20 @@
+<div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3 login-container">
+      <div class="card">
+        <div class="card-header bg-primary">Login</div>
+        <div class="card-body">
+          <div class="form-group">
+            <input type="text" placeholder="Username" class="form-control" [(ngModel)]="username">
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Password" class="form-control" [(ngModel)]="password">
+          </div>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary" style="width:100%;" (click)="onLoginClick()">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
